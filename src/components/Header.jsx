@@ -27,12 +27,24 @@ const Header = () => {
         } absolute w-full transtion-all duration-500 flex flex-col sm:flex-row sm:justify-end gap-2 sm:gap-5 font-bold bg-black text-white pt-14 pb-4 px-5 sm:px-10 xl:px-20`}
       >
         <li className={`${activeLi === 1 ? "text-orange-300" : ""}`}>
-          <Link onClick={() => setActiveLi(1)} to={"/"}>
+          <Link
+            onClick={() => {
+              setActiveLi(1);
+              setToggleNav(!toogleNav);
+            }}
+            to={"/"}
+          >
             Trang chủ
           </Link>
         </li>
-        <li className={`${activeLi === 3 ? "text-orange-300" : ""}`}>
-          <Link onClick={() => setActiveLi(3)} to={"/contact"}>
+        <li className={`${activeLi === 2 ? "text-orange-300" : ""}`}>
+          <Link
+            onClick={() => {
+              setActiveLi(2);
+              setToggleNav(!toogleNav);
+            }}
+            to={"/contact"}
+          >
             Liên hệ
           </Link>
         </li>
